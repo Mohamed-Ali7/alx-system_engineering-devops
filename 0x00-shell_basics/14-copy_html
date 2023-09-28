@@ -1,10 +1,2 @@
 #!/bin/bash
-DEST=./..
-for FILE in $(ls *.html)
-do
-    if [ -f "$DEST/$FILE" ]; then
- 	   continue
-    else
-        cp "$FILE" "$DEST"
-    fi
-done
+DEST=./.. for FILE in $(ls *.html) do if [ ! -f "$DEST/$FILE" ]; then cp "$FILE" "$DEST" fi done
