@@ -57,3 +57,12 @@ Requirements:
 **File `22-users_and_homes`:** Displays all users and their home directories, sorted by users.
 
 -   Based on the the  `/etc/passwd`  file
+
+**File `100-empty_casks`:** Finds all empty files and directories in the current directory and all sub-directories.
+
+-   Only the names of the files and directories should be displayed (not the entire path)  
+    
+-   Hidden files should be listed
+-   One file name per line  
+    
+-   The listing should end with a new line
