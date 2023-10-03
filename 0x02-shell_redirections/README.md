@@ -53,3 +53,7 @@ Requirements:
 **File `20-hiago`:** Create a script that removes all letters `c` and `C` from input.
 
 **File `21-reverse`:** Reverses its input.  
+
+**File `22-users_and_homes`:** Displays all users and their home directories, sorted by users.
+
+-   Based on the the  `/etc/passwd`  file
