@@ -1,0 +1,2 @@
+#!/bin/bash
+echo -e  $PATH|grep -F '/' -o|wc -l
