@@ -9,3 +9,6 @@
 **File `3-paths`:** Counts the number of directories in the `PATH`.  
 
 **File `4-global_variables`:** Lists environment variables.  
+
+**File `5-local_variables`:** Lists all local variables and environment variables, and functions.  
+
