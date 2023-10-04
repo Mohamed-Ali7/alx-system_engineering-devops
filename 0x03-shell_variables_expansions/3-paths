@@ -1,2 +1,2 @@
 #!/bin/bash
-echo -e  $PATH|grep -F '/' -o|wc -l
+echo -e $PATH|tr : \\n|grep -e [a-z]|sort|uniq|wc -l
