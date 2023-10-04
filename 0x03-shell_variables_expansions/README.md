@@ -12,3 +12,7 @@
 
 **File `5-local_variables`:** Lists all local variables and environment variables, and functions.  
 
+**File `6-create_local_variable`:** Creates a new local variable.
+-   Name:  `BEST`
+-   Value:  `School`
+
