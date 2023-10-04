@@ -16,3 +16,5 @@
 -   Name:  `BEST`
 -   Value:  `School`
 
+
+**File `7-create_global_variable`:** Creates a new global variable.  
