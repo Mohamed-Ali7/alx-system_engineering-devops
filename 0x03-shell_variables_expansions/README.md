@@ -54,3 +54,4 @@ The number will be stored in the environment variable  `NUM`.
 
 **File `101-rot13`:** Encodes and decodes text using the rot13 encryption. Assume ASCII.  
 
+**File `102-odd`:** Prints every other line from the input, starting with the first line.  
