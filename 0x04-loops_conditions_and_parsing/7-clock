@@ -6,11 +6,16 @@ minutes=1
 
 echo "Hour: 0"
 
-while [ $hours -le 12 ]
+while [ $hours -le 13 ]
 do
     if [ $minutes -eq 60 ]
     then
-        echo "Hour: $hours"
+
+        if [ $hours -lt 13 ]
+        then
+            echo "Hour: $hours"
+        fi
+
         minutes=1
         ((hours++))
     else
