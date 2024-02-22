@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This script is displaying "Best School" 10 times
+# This script is displaying the content of the file /etc/passwd.
 
 
 while read -r line
