@@ -3,4 +3,4 @@
 
 FILE="apache-access.log"
 
-awk -F " " '{print $1"  " $9}' $FILE
+awk -F " " '{print $1 " " $9}' $FILE
