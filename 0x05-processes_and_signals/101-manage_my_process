@@ -10,12 +10,12 @@ case $cmd in
         echo "manage_my_process started";;
 
     "stop" )
-        pkill -f manage_my_process
-        rm -rf /var/run/my_process.pid
-        echo "manage_my_process stopped";;
-
+        echo "manage_my_process stopped"
+        kill "$(cat var/run/my_process.pid)"
+        rm -rf /var/run/my_process.pid;;
+        
     "restart" )
-        pkill -f manage_my_process
+        kill "$(cat var/run/my_process.pid)"
         rm -rf /var/run/my_process.pid
 
         ./manage_my_process &
