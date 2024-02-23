@@ -3,8 +3,9 @@
 
 n=0
 echo $$ > var/run/myscript.pid
-trap "echo Y U no love me?!; rm -f /var/run/myscript.pid; exit" SIGINT
-trap "echo I hate the kill command; rm -f /var/run/myscript.pid; exit" SIGTERM
+trap "echo Y U no love me?!" SIGINT
+trap "echo I hate the kill command; rm /var/run/myscript.pid; exit" SIGTERM
+trap "rm /var/run/myscript.pid; exit" SIGQUIT
 
 while [ $n -le 1 ]
 do
