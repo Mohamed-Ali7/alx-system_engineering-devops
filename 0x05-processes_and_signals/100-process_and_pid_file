@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script displays To infinity and beyond indefinitely.
+
+n=0
+echo $$ > var/run/myscript.pid
+trap "echo Y U no love me?!; exit; rm /var/run/myscript.pid" SIGINT
+trap "echo I hate the kill command; exit; rm /var/run/myscript.pid" SIGTERM
+
+while [ $n -le 1 ]
+do
+    echo "To infinity and beyond"
+done
