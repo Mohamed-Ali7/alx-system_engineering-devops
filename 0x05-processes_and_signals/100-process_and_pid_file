@@ -3,11 +3,12 @@
 
 n=0
 echo $$ > var/run/myscript.pid
-trap "echo Y U no love me?!" SIGINT
+trap "echo Y U no love me?!; exit" SIGINT
 trap "echo I hate the kill command; rm -rf /var/run/myscript.pid; exit" SIGTERM
 trap "rm -rf /var/run/myscript.pid; exit" SIGQUIT 
 
 while [ $n -le 1 ]
 do
     echo "To infinity and beyond"
+    sleep 2
 done
