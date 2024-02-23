@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script lists all the current running process.
 
-ps -u
+ps -u -f -x -a
