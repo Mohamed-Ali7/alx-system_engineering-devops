@@ -12,7 +12,7 @@ case $cmd in
     "stop" )
         echo "manage_my_process stopped"
         kill "$(cat var/run/my_process.pid)"
-        rm -rf /var/run/my_process.pid;;
+        rm -rf var/run/my_process.pid;;
         
     "restart" )
         kill "$(cat var/run/my_process.pid)"
