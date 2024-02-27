@@ -56,7 +56,7 @@ sylvain@ubuntu$ ./example.rb 127.0.0.a
 
 **File -  `0-simply_match_school.rb`:**
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/ec65557f0da1fbfbff6659413885e4d4822f5b1d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T141648Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=41efdc8ed6ac8f44cbfb3338aae902ed47d8fbc684323e106b92efbbacd5ef4b)
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/ec65557f0da1fbfbff6659413885e4d4822f5b1d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T171540Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5a25920a9e77a6c44fb3e73c6db17c607201d6733f25440dfe58ff4abc5365f9)
 
 Requirements:
 
@@ -82,7 +82,7 @@ $
 
 **File -  `1-repetition_token_0.rb`:**
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/e7db3c377d46453588fc84f3a975661d142fee91.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T141648Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=094de6969705a97b86eca68b7eed60b513e61cbe461353dfe248064b00b8df94)
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/e7db3c377d46453588fc84f3a975661d142fee91.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T171540Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=6660746e8b638afbb1c2908438262c86a0dd73880dee6b9f480ceee82dc61f84)
 
 Requirements:
 
@@ -95,7 +95,7 @@ Requirements:
 
 **File - `2-repetition_token_1.rb`:**
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/c59ff11db195d5cf17d1790a5141ae2f234786d2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T141648Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5624178cd8dcf133b43e1cac0d0b9219210fa1bd52fe584c56c2fff990040335)
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/c59ff11db195d5cf17d1790a5141ae2f234786d2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T171540Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=40e8072f1b2d8913307ded30787f2446e7e0a628e11a3d0cf0f47fbc9dfb07c5)
 
 Requirements:
 
@@ -108,7 +108,7 @@ Requirements:
 
 **File -  `3-repetition_token_2.rb`:**
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/3b6bf4aeca6a0c2de584e7f5d68d11eef57ce205.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T141649Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=bedde7fa40dd655e6512cc3f5e70fb5bdb13ac4515c4af607e1f050bfd5a2faa)
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/3b6bf4aeca6a0c2de584e7f5d68d11eef57ce205.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T171540Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=b742edb43b33e6b1d548eb741beef9dd9965c47dc23f59f913c519957dc5194f)
 
 Requirements:
 
@@ -121,7 +121,7 @@ Requirements:
 
 **File -  `4-repetition_token_3.rb`:**
 
-![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/f8dbcb9cf5ae569a8645027dc46e81cb372ce28e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T141649Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=3bf51586cb83accd9625a127fdc62d6c14972a8e561c88bb1bcae5819c94f685)
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/f8dbcb9cf5ae569a8645027dc46e81cb372ce28e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T171540Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=8affd25f759c3d01ea4c7b944ee3e86042ad34b2c67793de9f493d2e25da656d)
 
 Requirements:
 
