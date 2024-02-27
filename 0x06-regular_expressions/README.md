@@ -93,7 +93,7 @@ Requirements:
 
 ### 2. Repetition Token #1
 
-mandatory
+**File - `2-repetition_token_1.rb`:**
 
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/c59ff11db195d5cf17d1790a5141ae2f234786d2.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20240227%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240227T141648Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5624178cd8dcf133b43e1cac0d0b9219210fa1bd52fe584c56c2fff990040335)
 
@@ -102,13 +102,7 @@ Requirements:
 -   Find the regular expression that will match the above cases
 -   Using the project instructions, create a Ruby script that accepts one argument and pass it to a regular expression matching method
 
-**Repo:**
-
--   GitHub repository:  `alx-system_engineering-devops`
--   Directory:  `0x06-regular_expressions`
--   File:  `2-repetition_token_1.rb`
-
-Done?  Help  Check your code  Get a sandbox
+<br>
 
 ### 3. Repetition Token #2
 
