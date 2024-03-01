@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script modifies /etc/hosts file so:
+# localhost resolves to 127.0.0.2 and facebook.com resolves to 8.8.8.8
+
+ifconfig | awk '/inet / {print $2}'
