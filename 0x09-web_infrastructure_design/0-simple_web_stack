@@ -47,10 +47,13 @@ Explain what the issues are with this infrastructure:
             - if The web server crashes or becomes unresponsive, it will cause the web application to crash as well
 
             - Or if The database server craches for any reason this will cause data unavailability
-            and disrupt the functioning of the web applications because the database is responsible to manage the data of the application.
+            and disrupt the functioning of the web applications because the database
+            is responsible to manage the data of the application.
 
 2-Downtime when maintenance needed (like deploying new code web server needs to be restarted)
-    In the case of this infrastructure when performing any updates to the web site like deploying new code or the web server needs to be restarted will temporarily disrupt the availability of the website.
+    In the case of this infrastructure when performing any updates to the web site like deploying
+    new code or the web server needs to be restarted will temporarily disrupt the availability of the website.
 
 3-Cannot scale if too much incoming traffic
-    This infrastructure cannot scale when dealing with a high volume of incoming traffic that exceeds the capacity of the server, which will cause performance issues or it can even crash.
+    This infrastructure cannot scale when dealing with a high volume of incoming traffic that exceeds
+    the capacity of the server, which will cause performance issues or it can even crash.
