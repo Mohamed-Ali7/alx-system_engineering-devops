@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# A copy of ~/.ssh/config file that makes thr SSH client
+# to use the private key ~/.ssh/school and forbids authenticate using a password
+
+Host *
+        IdentityFile ~/.ssh/school
+        PasswordAuthentication no
