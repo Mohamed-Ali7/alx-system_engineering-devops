@@ -6,5 +6,5 @@
 #    it must return a page that contains the string Hello World!
 
 apt-get install -y nginx
-echo "Hello World!" > /var/www/html/index
-service nginx restart
+echo "Hello World!" > /var/www/html/index.html
+service nginx start
