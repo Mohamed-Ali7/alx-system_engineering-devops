@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# This script:
+#  - Installs nginx on my web-01 server
+#  - Makes Nginx listening on port 80
+#  - When querying Nginx at its root / with a GET request (requesting a page) using curl,
+#    it must return a page that contains the string Hello World!
+#  - /redirect_me uri is redirecting to another page.
+#  - Createing a custom 404 page that contains the string 'Ceci n'est pas une page'.
+
+apt-get install -y nginx
+echo "Hello World!" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+
+new="listen [::]:80 default_server;\n\
+        location /redirect_me {\n\
+            return 301 https://www.google.com/;\n\
+        }\n\
+        error_page 404 custom_404.html;\n\
+        location = /custom_404.html {\n\
+        root /var/www/html;\n\
+        internal;\n\
+        }"
+sed -i "s#listen \[::\]:80 default_server;#$new#" /etc/nginx/sites-available/default
+
+service nginx restart
