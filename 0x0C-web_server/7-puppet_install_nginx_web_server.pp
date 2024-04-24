@@ -8,7 +8,7 @@ install_options => ['-y'],
 
 file {'index.html':
 ensure  => 'present',
-path    => '/var/index.html',
+path    => '/var/www/html/index.html',
 content => 'Hello World!',
 mode    => '0644',
 }
