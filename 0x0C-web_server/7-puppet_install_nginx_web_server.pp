@@ -3,6 +3,7 @@
 package { 'nginx':
 ensure          => installed,
 provider        => 'apt',
+install_options => ['-y'],
 }
 
 file {'/var/www/html/index.html':
@@ -11,29 +12,11 @@ content => 'Hello World!
 ',
 }
 
-$new_content="
-
-server {
-        listen 80 default_server;
-        listen [::]:80 default_server;
-        location /redirect_me {
-            return 301 https://www.google.com;
-        }
-
-        root /var/www/html;
-        index index.html index.htm index.nginx-debian.html;
-
-        server_name _;
-
-        location / {
-                try_files  / =404;
-        }
-}
-"
-
-file{ '/etc/nginx/sites-available/default':
-  ensure  => 'present',
-  content => $new_content,
+file_line { 'redirection-301':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-available/default',
+  after  => 'listen 80 default_server;',
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
 service { 'nginx':
