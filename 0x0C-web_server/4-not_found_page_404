@@ -15,7 +15,7 @@ new="listen [::]:80 default_server;\n\
         location /redirect_me {\n\
             return 301 https://www.google.com/;\n\
         }\n\
-        error_page 404 custom_404.html;\n\
+        error_page 404 /custom_404.html;\n\
         location = /custom_404.html {\n\
         root /var/www/html;\n\
         internal;\n\
