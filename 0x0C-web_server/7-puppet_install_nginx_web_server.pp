@@ -12,11 +12,16 @@ content => 'Hello World!
 ',
 }
 
+$new_content="location /redirect_me {
+            return 301 https://www.google.com;
+        }
+"
+
 file_line { 'redirection-301':
   ensure => 'present',
   path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+  after  => 'listen [::]:80 default_server;',
+  line   => $new_content,
 }
 
 service { 'nginx':
