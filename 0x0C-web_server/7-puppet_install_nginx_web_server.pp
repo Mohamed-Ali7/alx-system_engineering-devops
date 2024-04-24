@@ -113,3 +113,7 @@ file{ '/etc/nginx/sites-available/default':
   ensure  => 'present',
   content => $new_content,
 }
+
+service { 'nginx':
+  ensure => 'running',
+}
