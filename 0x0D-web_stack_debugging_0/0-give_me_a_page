@@ -1,4 +1,5 @@
-# This file shows the command that is used to fix the connection with a the docker
+#!/usr/bin/env bash
+# This script shows the command that is used to fix the connection with a the docker
 # container provided in the project's page
 
 service apache2 start
