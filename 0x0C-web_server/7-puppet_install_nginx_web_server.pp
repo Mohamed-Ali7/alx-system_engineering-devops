@@ -3,7 +3,6 @@
 package { 'nginx':
 ensure          => installed,
 provider        => 'apt',
-install_options => ['-y'],
 }
 
 file {'/var/www/html/index.html':
