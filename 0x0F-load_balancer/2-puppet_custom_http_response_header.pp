@@ -16,6 +16,6 @@ file_line { 'http_header':
   line  => "http {\n\tadd_header X-Served-By \"${hostname}\";",
 }
 
-service { 'nginx':
-  ensure => 'running',
+exec {'run2':
+  command => '/usr/sbin/service nginx start',
 }
