@@ -1,27 +1,16 @@
 # Puppet script to install and configure an Nginx server
 
-exec { 'update':
-  command => 'apt-get -y update',
-  path    => '/usr/bin/',
+exec {'update':
+  command => '/usr/bin/apt-get update',
 }
-
-package { 'nginx':
-ensure          => installed,
-provider        => 'apt',
-install_options => ['-y'],
+-> package {'nginx':
+  ensure => 'present',
 }
-
-$after_line='listen \[::\]:80 default_server;'
-$new_header="add_header X-Served-By \$hostname;"
-$file='/etc/nginx/sites-available/default'
-
-exec { 'Add header':
-  command => "sed -i '/${after_line}/a\ \t${new_header}' ${file}",
-  path    => '/usr/bin',
-  unless  => "grep -q '${new_header}' '${file}'",
+-> file_line { 'http_header':
+  path  => '/etc/nginx/nginx.conf',
+  match => 'http {',
+  line  => "http {\n\tadd_header X-Served-By \"${hostname}\";",
 }
-
-exec { 'restart':
-  command  => 'service nginx restart',
-  provider => 'shell',
+-> exec {'run2':
+  command => '/usr/sbin/service nginx start',
 }
