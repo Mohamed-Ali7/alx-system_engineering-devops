@@ -4,10 +4,8 @@ exec {'update':
   command => '/usr/bin/apt-get update',
 }
 
-package { 'nginx':
-ensure          => installed,
-provider        => 'apt',
-install_options => ['-y'],
+-> package {'nginx':
+  ensure => 'present',
 }
 
 file_line { 'http_header':
