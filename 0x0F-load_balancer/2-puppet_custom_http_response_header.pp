@@ -7,7 +7,6 @@ exec { 'update':
 package { 'nginx':
 ensure          => installed,
 provider        => 'apt',
-install_options => ['-y'],
 }
 
 $new_header="\tadd_header X-Served-By ${hostname};"
