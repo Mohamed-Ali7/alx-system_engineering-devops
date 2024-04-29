@@ -11,11 +11,10 @@ provider        => 'apt',
 install_options => ['-y'],
 }
 
-file_line { 'add header':
-  ensure => 'present',
-  path   => '/etc/nginx/nginx.conf',
-  after  => 'http {',
-  line   => "\tadd_header X-Served-By \"${hostname}\";",
+file_line { 'http_header':
+  path  => '/etc/nginx/nginx.conf',
+  match => 'http {',
+  line  => "http {\n\tadd_header X-Served-By \"${hostname}\";",
 }
 
 service { 'nginx':
