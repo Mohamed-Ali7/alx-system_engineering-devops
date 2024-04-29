@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# This script installs and configure HAproxy
+
+apt-get -y update;
+apt-get -y install haproxy;
+
+echo "frontend front_handler
+    bind :80
+    mode http
+    default_backend backend_server
+
+backend backend_server
+    mode http
+    balance roundrobin
+
+    server 531117-web-01 54.208.120.231:80 check
+    server 531117-web-02 54.89.61.73:80 check" > /etc/haproxy/haproxy.cfg;
+
+service haproxy restart;
