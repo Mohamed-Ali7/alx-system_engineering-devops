@@ -3,14 +3,19 @@
 exec {'update':
   command => '/usr/bin/apt-get update',
 }
--> package {'nginx':
+package {'nginx':
   ensure => 'present',
 }
--> file_line { 'http_header':
-  path  => '/etc/nginx/nginx.conf',
-  match => 'http {',
-  line  => "http {\n\tadd_header X-Served-By \"${hostname}\";",
+
+$new_header="\tadd_header X-Served-By \$hostname;"
+
+file_line { 'add_header':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-available/default',
+  after  => 'listen \[::\]:80 default_server;',
+  line   => $new_header,
 }
--> exec {'run2':
-  command => '/usr/sbin/service nginx start',
+
+service { 'nginx':
+  ensure => 'running',
 }
