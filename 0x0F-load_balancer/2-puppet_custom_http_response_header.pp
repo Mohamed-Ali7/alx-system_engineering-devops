@@ -21,6 +21,7 @@ exec { 'Add header':
   unless  => "grep -q '${new_header}' '${file}'",
 }
 
-service { 'nginx':
-  ensure => 'running',
+exec { 'restart':
+  command  => 'service nginx restart',
+  provider => 'shell',
 }
