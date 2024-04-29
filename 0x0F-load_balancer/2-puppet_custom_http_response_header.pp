@@ -1,12 +1,14 @@
 # Puppet script to install and configure an Nginx server
 
 exec { 'update':
-  command  => '/urs/bin/apt-get -y update',
+  command  => 'apt-get -y update',
+  path     => '/usr/bin/',
 }
 
 package { 'nginx':
 ensure          => installed,
 provider        => 'apt',
+install_options => ['-y'],
 }
 
 $new_header="\tadd_header X-Served-By ${hostname};"
@@ -20,4 +22,5 @@ file_line { 'add_header':
 
 service { 'nginx':
   ensure => 'running',
+  hasrestart => true,
 }
