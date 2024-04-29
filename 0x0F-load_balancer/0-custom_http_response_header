@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script:
+#  - Installs nginx on my web-01 amd web-02 servers
+#  - Add custom response header (X-Served-By) that contains the server's hostname
+
+apt-get update
+apt-get install nginx
+
+after_line="listen \[::\]:80 default_server;"
+new_header="add_header X-Served-By \$hostname;"
+file="/etc/nginx/sites-available/default"
+
+grep -q "$new_header" $file || sed -i "/$after_line/a\ \t$new_header" $file;
+
+service nginx restart
