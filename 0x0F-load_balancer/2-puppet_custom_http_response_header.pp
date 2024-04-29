@@ -1,26 +1,25 @@
 # Puppet script to install and configure an Nginx server
 
-exec { 'update':
-  command => 'apt-get -y update',
-  path    => '/usr/bin/',
+exec { 'update server':
+  command  => 'apt-get update',
+  user     => 'root',
+  provider => 'shell',
 }
 
 package { 'nginx':
-ensure          => installed,
-provider        => 'apt',
-install_options => ['-y'],
+  ensure   => present,
+  provider => 'apt'
 }
 
-$after_line='listen \[::\]:80 default_server;'
-$new_header="add_header X-Served-By \$hostname;"
-$file='/home/mohamed/alx_projects/alx-system_engineering-devops/0x0F-load_balancer/default'
-
-exec { 'Add header':
-  command => "sed -i '/${after_line}/a\ \t${new_header}' ${file}",
-  path    => '/usr/bin',
-  unless  => "grep -q '${new_header}' '${file}'",
+file_line { 'add HTTP header':
+  ensure => 'present',
+  path   => '/etc/nginx/sites-available/default',
+  after  => 'listen 80 default_server;',
+  line   => 'add_header X-Served-By $hostname;'
 }
 
 service { 'nginx':
-  ensure => 'running',
+  ensure  => 'running',
+  enable  => true,
+  require => Package['nginx']
 }
