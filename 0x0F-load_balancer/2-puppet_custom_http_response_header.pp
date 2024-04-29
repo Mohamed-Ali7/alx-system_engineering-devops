@@ -11,7 +11,7 @@ provider        => 'apt',
 install_options => ['-y'],
 }
 
-$new_header="\tadd_header X-Served-By \$hostname;"
+$new_header="\tadd_header X-Served-By $hostname;"
 
 file_line { 'add_header':
   ensure => 'present',
