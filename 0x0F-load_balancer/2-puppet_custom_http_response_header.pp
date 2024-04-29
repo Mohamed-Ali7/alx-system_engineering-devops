@@ -2,7 +2,7 @@
 
 exec { 'update':
   command  => 'apt-get update',
-  provider => shell
+  path     => '/usr/bin/'
 }
 
 package { 'nginx':
@@ -15,7 +15,7 @@ $new_header="\tadd_header X-Served-By \$hostname;"
 
 file_line { 'add_header':
   ensure => 'present',
-  path   => '/home/mohamed/alx_projects/alx-system_engineering-devops/0x0F-load_balancer/default',
+  path   => '/etc/nginx/sites-available/default',
   after  => 'listen \[::\]:80 default_server;',
   line   => $new_header,
 }
