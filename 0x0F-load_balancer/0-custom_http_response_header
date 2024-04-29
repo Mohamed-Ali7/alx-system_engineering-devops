@@ -3,8 +3,8 @@
 #  - Installs nginx on my web-01 amd web-02 servers
 #  - Add custom response header (X-Served-By) that contains the server's hostname
 
-apt-get update
-apt-get install nginx
+apt-get -y update
+apt-get -y install nginx
 
 after_line="listen \[::\]:80 default_server;"
 new_header="add_header X-Served-By \$hostname;"
