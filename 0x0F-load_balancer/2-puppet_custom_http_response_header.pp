@@ -6,7 +6,7 @@ provider        => 'apt',
 install_options => ['-y'],
 }
 
-$new_header='add_header X-Served-By $hostname;'
+$new_header="add_header X-Served-By $hostname;"
 
 file_line { 'add_header':
   ensure => 'present',
