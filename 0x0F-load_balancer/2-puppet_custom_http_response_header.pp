@@ -15,7 +15,7 @@ $new_header="\tadd_header X-Served-By \$hostname;"
 
 file_line { 'add_header':
   ensure => 'present',
-  path   => '/etc/nginx/nginx.config',
+  path   => '/etc/nginx/nginx.conf',
   after  => 'http {',
   line   => $new_header,
 }
