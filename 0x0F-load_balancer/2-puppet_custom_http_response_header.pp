@@ -1,7 +1,8 @@
 # Puppet script to install and configure an Nginx server
 
 exec {'update':
-  command => '/usr/bin/apt-get update',
+  command => 'apt-get update',
+  path    => '/usr/bin',
 }
 -> package {'nginx':
   ensure => 'present',
