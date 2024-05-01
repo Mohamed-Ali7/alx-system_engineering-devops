@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+apt-get -y install nginx
+
+result=$(grep -E "listen ([0-9]+) default_server;" "/etc/nginx/sites-available/default")
+new_line="\tlisten 80 default_server;";
+
+if [[ -z $result ]]
+then
+    sed -i "/server {/a\ $new_line" "/etc/nginx/sites-available/default";
+else
+    sed -i "s/$result/$new_line/" "/etc/nginx/sites-available/default";
+fi
+
+service nginx restart;
