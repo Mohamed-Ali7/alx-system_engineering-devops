@@ -11,4 +11,6 @@ else
     sed -i "s/$result/$new_line/" "/etc/nginx/sites-available/default";
 fi
 
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+
 service nginx restart;
