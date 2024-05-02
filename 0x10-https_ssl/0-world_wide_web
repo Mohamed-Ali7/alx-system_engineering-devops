@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This script displays information about the domain passed as an argument.
+
+function get_domain_info(){
+    if [[ -z $2 ]]
+    then
+        SUB_DOMAINS=('www' 'lb-01' 'web-01' 'web-02')
+        for sub in "${SUB_DOMAINS[@]}"
+        do
+            dig_result=$(dig "$sub.$1" | grep -A1 'ANSWER SECTION:' | tail -n1)
+            echo "$dig_result" | awk -v subdomain="$sub" \
+            '{print "The subdomain " subdomain " is a " $4 " record and points to " $5}'
+        done
+    else
+        dig_result=$(dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n1)
+        echo "$dig_result" | awk -v subdomain="$2" \
+        '{print "The subdomain " subdomain " is a " $4 " record and points to " $5}'
+    fi
+}
+
+get_domain_info "$1" "$2"
