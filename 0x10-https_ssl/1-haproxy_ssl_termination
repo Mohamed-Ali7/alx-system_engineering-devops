@@ -2,7 +2,6 @@ frontend front_handler
     mode http
     bind :443 ssl crt /etc/haproxy/certs/www.alxairbnb.tech.pem
     bind :80
-    http-request redirect scheme https code 301 unless { ssl_fc }
     default_backend backend_server
 
 backend backend_server
