@@ -1,0 +1,13 @@
+frontend front_handler
+    mode http
+    bind :443 ssl crt /etc/haproxy/certs/www.alxairbnb.tech.pem
+    bind :80
+    http-request redirect scheme https code 301 unless { ssl_fc }
+    default_backend backend_server
+
+backend backend_server
+    mode http
+    balance roundrobin
+
+    server 531117-web-01 54.208.120.231:80 check
+    server 531117-web-02 54.89.61.73:80 check
