@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This script prints the name of the current user
+
+su "$1"
+whoami
