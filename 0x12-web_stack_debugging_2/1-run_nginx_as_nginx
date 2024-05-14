@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # This script confgures nginx
-service apache2 stop
+pkill apache2
 sed -i -E "s@#?user .*;@user nginx;@" /etc/nginx/nginx.conf
 sed -i -E "s/([0-9]+) default_server;/8080 default_server;/" "/etc/nginx/sites-available/default"
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
