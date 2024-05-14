@@ -4,4 +4,4 @@ pkill apache2
 chmod 644 /etc/nginx/nginx.conf
 sed -i -E "s@#?user .*;@user nginx;@" /etc/nginx/nginx.conf
 sed -i -E "s/([0-9]+) default_server/8080 default_server/" "/etc/nginx/sites-available/default"
-service -u nginx nginx restart
+sudo -u nginx service nginx restart
