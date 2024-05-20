@@ -16,7 +16,7 @@ if __name__ == "__main__":
                                 .format(argv[1]))
 
     user = user_request.json()
-    user_name = user["name"]
+    user_name = user["username"]
 
     res = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos/"
                        .format(argv[1]))
