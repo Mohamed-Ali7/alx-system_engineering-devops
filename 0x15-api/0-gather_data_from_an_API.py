@@ -7,7 +7,6 @@ for a given employee ID, returns information about his/her TODO list progress.
 
 import requests
 from sys import argv
-import json
 
 
 if __name__ == "__main__":
@@ -34,4 +33,4 @@ if __name__ == "__main__":
           .format(user_name, number_of_done_tasks, total_number_of_tasks))
 
     for task in completed_tasks:
-        print(" \t{}".format(task['title']))
+        print("\t {}".format(task['title']))
