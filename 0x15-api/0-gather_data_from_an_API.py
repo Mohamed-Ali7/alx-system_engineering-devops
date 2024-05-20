@@ -9,27 +9,29 @@ import requests
 from sys import argv
 import json
 
-user_request = requests.get("https://jsonplaceholder.typicode.com/users/{}"
-                            .format(argv[1]))
 
-user = user_request.json()
-user_name = user["name"]
+if __name__ == "__main__":
+    user_request = requests.get("https://jsonplaceholder.typicode.com/users/{}"
+                                .format(argv[1]))
 
-res = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos/"
-                   .format(argv[1]))
+    user = user_request.json()
+    user_name = user["name"]
 
-tasks = res.json()
-total_number_of_tasks = len(tasks)
-number_of_done_tasks = 0
-completed_tasks = []
+    res = requests.get("https://jsonplaceholder.typicode.com/users/{}/todos/"
+                       .format(argv[1]))
 
-for task in tasks:
-    if task['completed']:
-        number_of_done_tasks += 1
-        completed_tasks.append(task)
+    tasks = res.json()
+    total_number_of_tasks = len(tasks)
+    number_of_done_tasks = 0
+    completed_tasks = []
 
-print("Employee {} is done with tasks({}/{}):"
-      .format(user_name, number_of_done_tasks, total_number_of_tasks))
+    for task in tasks:
+        if task['completed']:
+            number_of_done_tasks += 1
+            completed_tasks.append(task)
 
-for task in completed_tasks:
-    print(" \t{}".format(task['title']))
+    print("Employee {} is done with tasks({}/{}):"
+          .format(user_name, number_of_done_tasks, total_number_of_tasks))
+
+    for task in completed_tasks:
+        print(" \t{}".format(task['title']))
