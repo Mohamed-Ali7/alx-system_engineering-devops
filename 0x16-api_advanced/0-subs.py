@@ -14,7 +14,7 @@ def number_of_subscribers(subreddit):
     file_name = "access_token"
     access_token = ''
     with open(file_name, 'r') as file:
-        access_token = file.read().strip()
+        access_token = "bearer {}".format(file.read().strip())
 
     headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
                AppleWebKit/537.36 (KHTML, like Gecko)\
