@@ -2,8 +2,8 @@
 
 """This module contains number_of_subscribers functions"""
 
-import requests
-from requests.auth import HTTPBasicAuth
+import urllib.request
+import json
 
 
 def number_of_subscribers(subreddit):
@@ -23,10 +23,12 @@ def number_of_subscribers(subreddit):
                "Authorization": access_token}
 
     url = "https://oauth.reddit.com/r/{}/about".format(subreddit)
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    req = urllib.request.Request(url, headers=headers)
 
-    if response.status_code == 200:
-        data = response.json()
-        return data['data']['subscribers']
-    else:
-        return 0
+    try:
+        with urllib.request.urlopen(req) as response:
+            data = json.loads(response.read().decode())
+            return data['data']['subscribers']
+    except urllib.error.HTTPError as e:
+        if e.code == 403:
+            return 0
