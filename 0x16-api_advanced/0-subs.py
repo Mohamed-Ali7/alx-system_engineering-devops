@@ -13,7 +13,6 @@ def number_of_subscribers(subreddit):
 
     headers = {'User-Agent': 'Python/1.0(Holberton School 0x16 task 0)'}
 
-
     url = 'http://www.reddit.com/r/{}/about.json'.format(subreddit)
     response = requests.get(url, headers=headers)
     if (not response.ok):
