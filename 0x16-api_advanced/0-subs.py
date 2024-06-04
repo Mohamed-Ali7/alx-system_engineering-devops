@@ -21,8 +21,8 @@ def number_of_subscribers(subreddit):
                Chrome/125.0.0.0 Safari/537.36",
                "Authorization": access_token}
 
-    url = "https://oauth.reddit.com/r/{}/about.json".format(subreddit)
-    response = requests.get(url, headers=headers, allow_redirects=False)
+    url = "https://www.reddit.com/r/{}/about.json".format(subreddit)
+    response = requests.get(url, headers=headers)
 
     if response.status_code == 200:
         data = response.json()
