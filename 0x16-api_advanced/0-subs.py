@@ -2,8 +2,15 @@
 
 """This module contains number_of_subscribers functions"""
 
-import json
-import urllib.request
+import subprocess
+import sys
+
+try:
+    import requests
+except ImportError:
+    package_name = 'requests'
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package_name])
+    import requests
 
 
 def number_of_subscribers(subreddit):
@@ -22,13 +29,11 @@ def number_of_subscribers(subreddit):
                Chrome/125.0.0.0 Safari/537.36",
                "Authorization": access_token}
 
-    url = "https://oauth.reddit.com/r/{}/about".format(subreddit)
-    req = urllib.request.Request(url, headers=headers)
+    url = "https://oauth.reddit.com/r/{}/about.json".format(subreddit)
+    response = requests.get(url, headers=headers, allow_redirects=False)
 
-    try:
-        with urllib.request.urlopen(req) as response:
-            data = json.loads(response.read().decode())
-            return data['data']['subscribers']
-    except urllib.error.HTTPError as e:
-        if e.code == 403:
-            return 0
+    if response.status_code == 200:
+        data = response.json()
+        return data['data']['subscribers']
+    else:
+        return 0
