@@ -2,8 +2,8 @@
 
 """This module contains number_of_subscribers functions"""
 
-import urllib.request
 import json
+import urllib.request
 
 
 def number_of_subscribers(subreddit):
