@@ -5,7 +5,7 @@
 import requests
 
 
-def count_words(subreddit, word_list=[], word_count={}, after=None):
+def count_words(subreddit, word_list, word_count={}, after=None):
     """
     prints the titles of the first 10 hot posts listed for a given subreddit
     """
@@ -29,20 +29,21 @@ def count_words(subreddit, word_list=[], word_count={}, after=None):
         return None
 
     titles = ([post["data"]["title"] for post in children])
+    word_list = [word.lower() for word in word_list]
     for title in titles:
-        title_words = title.split()
+        title_words = [word.lower() for word in title.split()]
         for word in word_list:
-            if word in title_words:
-                if word not in word_count:
-                    word_count[word] = 1
-                else:
-                    word_count[word] += 1
+            count = title_words.count(word)
+            if word not in word_count:
+                word_count[word] = count
+            else:
+                word_count[word] += count
 
     after = data.get("after", None)
     if after:
         count_words(subreddit, word_list, word_count, after)
     else:
-        word_count = dict(sorted(word_count.items(),
-                                 key=lambda item: (item[1], item[1]),
-                                 reverse=True))
-        print(word_count)
+        word_count = sorted(word_count.items(),
+                            key=lambda item: (-item[1], item[0]))
+        for word, count in word_count:
+            print("{}: {}".format(word, count))
