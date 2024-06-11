@@ -8,7 +8,7 @@ server {
 
         location /airbnb-onepage/ {
                 include proxy_params;
-                proxy_pass http://localhost:5000/airbnb-onepage/;
+                proxy_pass http://localhost:5000;
         }
         add_header X-Served-By $hostname;
         # SSL configuration
