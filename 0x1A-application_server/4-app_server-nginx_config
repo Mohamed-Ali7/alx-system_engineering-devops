@@ -1,6 +1,5 @@
 server {
         listen 80 default_server;
-        listen [::]:80 default_server;
 
         location /hbnb_static {
                 alias /data/web_static/current/;
@@ -16,9 +15,9 @@ server {
                 proxy_pass http://localhost:5001/number_odd_or_even/;
         }
 
-        location /api {
+        location /api/ {
                 include proxy_params;
-                proxy_pass http://localhost:5002;
+                proxy_pass http://localhost:5002/api/;
         }
 
         add_header X-Served-By $hostname;
@@ -27,7 +26,7 @@ server {
 
         index index.html index.htm index.nginx-debian.html;
 
-        server_name 54.208.120.231;
+        server_name 127.0.0.1 54.208.120.231;
 
         location / {
                 try_files $uri $uri/ =404;
