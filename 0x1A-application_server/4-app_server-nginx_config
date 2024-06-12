@@ -38,7 +38,7 @@ server {
 
         location /api/ {
                 include proxy_params;
-                proxy_pass http://localhost:5001;
+                proxy_pass http://localhost:5002;
         }
 
         add_header X-Served-By $hostname;
