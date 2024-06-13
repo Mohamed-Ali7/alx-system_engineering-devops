@@ -13,9 +13,9 @@ server {
                 proxy_pass http://localhost:5001;
         }
 
-        location /api {
+        location /api/ {
                 include proxy_params;
-                proxy_pass http://localhost:5002;
+                proxy_pass http://localhost:5002/api/;
         }
 
         location /static/ {
