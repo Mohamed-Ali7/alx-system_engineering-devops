@@ -1,10 +1,4 @@
 #!/usr/bin/env bash
 # This script reloads Gunicorn in a graceful way.
 
-GUNICORN_PID=$(pgrep -f "gunicorn.*web_flask.0-hello_route:app")
-
-if [ -z "$GUNICORN_PID" ]; then
-    exit 0
-fi
-
-kill -HUP "$GUNICORN_PID"
+pkill -HUP -f gunicorn
